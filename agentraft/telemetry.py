@@ -6,7 +6,7 @@ call becomes a cheap no-op, so the SDK has zero hard dependency on OTel.
 from __future__ import annotations
 
 from contextlib import contextmanager
-from typing import Any, Iterator, Optional
+from typing import Any, Iterator
 
 try:  # pragma: no cover - exercised only when otel is installed
     from opentelemetry import trace as _otel_trace
