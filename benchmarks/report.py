@@ -3,10 +3,8 @@ from __future__ import annotations
 
 import json
 import os
-from dataclasses import dataclass
 from typing import Optional
 
-from agentraft import ErrorType
 from agentraft.verifier.base import Verifier
 
 from .confusion import ConfusionResult
@@ -26,7 +24,8 @@ def _x(x: float) -> str:
 
 def _table(headers: list[str], rows: list[list[str]]) -> str:
     widths = [max(len(h), *(len(r[i]) for r in rows)) for i, h in enumerate(headers)]
-    line = lambda cells: "| " + " | ".join(c.ljust(widths[i]) for i, c in enumerate(cells)) + " |"
+    def line(cells: list[str]) -> str:
+        return "| " + " | ".join(c.ljust(widths[i]) for i, c in enumerate(cells)) + " |"
     sep = "|" + "|".join("-" * (w + 2) for w in widths) + "|"
     return "\n".join([line(headers), sep, *(line(r) for r in rows)])
 

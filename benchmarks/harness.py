@@ -19,7 +19,6 @@ from enum import Enum
 from typing import Optional
 
 from agentraft import (
-    Criticality,
     ErrorType,
     InMemoryCheckpointStore,
     StepContext,
