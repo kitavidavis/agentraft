@@ -170,11 +170,39 @@ coordinator = wrap(
 )
 ```
 
+## Benchmarks
+
+How much reliability does AgentRaft actually buy? The benchmark measures it via
+controlled fault injection — agents fail at a tunable per-step rate and emit
+taxonomy-typed bad outputs, so ground truth is known exactly and runs go through the
+real `Coordinator`.
+
+```bash
+python -m benchmarks --quick                 # fast smoke run
+python -m benchmarks --trials 1000           # tighter numbers
+python -m benchmarks --live --provider bedrock \
+    --model anthropic.claude-3-5-sonnet-20241022-v2:0   # measure a real verifier
+```
+
+It reports three things:
+
+- **Baseline vs AgentRaft** — success and *silent-corruption* rate (a wrong result
+  shipped undetected — the metric AgentRaft is built to crush).
+- **Length sweep** — the baseline follows the `0.9ⁿ` reliability-compounding decay
+  (59% → 35% → 21% → 12% at 5/10/15/20 steps) while AgentRaft stays flat.
+- **Verifier-quality sweep** — end-to-end reliability tracks verifier recall, which is
+  the quantitative case for the fine-tuned verifier as the moat.
+
+In `--live` mode it also prints a per-error-class **confusion table** for a real verifier
+— the rules gate catches `INCOMPLETE` but misses the semantic classes, which is exactly
+why the LLM/fine-tuned verifier matters. Full methodology and honest limitations:
+[`benchmarks/README.md`](benchmarks/README.md).
+
 ## Development
 
 ```bash
 pip install -e ".[dev]"
-pytest                # run the test suite
+pytest                # run the test suite (SDK + benchmark)
 ruff check .          # lint
 ```
 
