@@ -18,9 +18,15 @@ from __future__ import annotations
 import asyncio
 import sys
 
-from agentraft import Criticality, ErrorType, Pipeline, Step, StepContext, Task, wrap
-from agentraft.events import Event, EventType
-from agentraft.verifier import MockVerifier
+# Use UTF-8 for the icons/box-drawing below, even on a cp1252 Windows console.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except (AttributeError, ValueError):  # pragma: no cover - older/odd stdio
+    pass
+
+from agentraft import Criticality, ErrorType, Pipeline, Step, StepContext, Task, wrap  # noqa: E402
+from agentraft.events import Event, EventType  # noqa: E402
+from agentraft.verifier import MockVerifier  # noqa: E402
 
 # ── Pipeline steps ──────────────────────────────────────────────────────────
 # Each step is a normal async function. `drift_once` simulates a non-deterministic
