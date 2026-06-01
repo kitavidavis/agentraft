@@ -1,0 +1,151 @@
+{
+  "headline": [
+    {
+      "label": "short / reliable",
+      "n_steps": 5,
+      "p_fail": 0.05,
+      "recall": 0.9,
+      "baseline_success": 0.72,
+      "protected_success": 0.98,
+      "baseline_silent_corruption": 0.28,
+      "protected_silent_corruption": 0.02,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 14.000000000000002,
+      "cost_vs_full_rerun": 1.103897972956656
+    },
+    {
+      "label": "medium",
+      "n_steps": 10,
+      "p_fail": 0.1,
+      "recall": 0.9,
+      "baseline_success": 0.3,
+      "protected_success": 0.92,
+      "baseline_silent_corruption": 0.7,
+      "protected_silent_corruption": 0.08,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 8.75,
+      "cost_vs_full_rerun": 2.3583744414778964
+    },
+    {
+      "label": "long / critical",
+      "n_steps": 20,
+      "p_fail": 0.1,
+      "recall": 0.9,
+      "baseline_success": 0.06,
+      "protected_success": 0.86,
+      "baseline_silent_corruption": 0.94,
+      "protected_silent_corruption": 0.14,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 6.7142857142857135,
+      "cost_vs_full_rerun": 6.745779073557356
+    }
+  ],
+  "length_sweep": [
+    {
+      "label": "",
+      "n_steps": 5,
+      "p_fail": 0.1,
+      "recall": 0.9,
+      "baseline_success": 0.56,
+      "protected_success": 0.96,
+      "baseline_silent_corruption": 0.44,
+      "protected_silent_corruption": 0.04,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 11.0,
+      "cost_vs_full_rerun": 1.3901273811753256
+    },
+    {
+      "label": "",
+      "n_steps": 10,
+      "p_fail": 0.1,
+      "recall": 0.9,
+      "baseline_success": 0.3,
+      "protected_success": 0.92,
+      "baseline_silent_corruption": 0.7,
+      "protected_silent_corruption": 0.08,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 8.75,
+      "cost_vs_full_rerun": 2.3583744414778964
+    },
+    {
+      "label": "",
+      "n_steps": 15,
+      "p_fail": 0.1,
+      "recall": 0.9,
+      "baseline_success": 0.14,
+      "protected_success": 0.88,
+      "baseline_silent_corruption": 0.86,
+      "protected_silent_corruption": 0.12,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 7.166666666666667,
+      "cost_vs_full_rerun": 3.98684639284448
+    },
+    {
+      "label": "",
+      "n_steps": 20,
+      "p_fail": 0.1,
+      "recall": 0.9,
+      "baseline_success": 0.06,
+      "protected_success": 0.86,
+      "baseline_silent_corruption": 0.94,
+      "protected_silent_corruption": 0.14,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 6.7142857142857135,
+      "cost_vs_full_rerun": 6.745779073557356
+    }
+  ],
+  "recall_sweep": [
+    {
+      "label": "",
+      "n_steps": 15,
+      "p_fail": 0.1,
+      "recall": 0.5,
+      "baseline_success": 0.14,
+      "protected_success": 0.52,
+      "baseline_silent_corruption": 0.86,
+      "protected_silent_corruption": 0.48,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 1.7916666666666667,
+      "cost_vs_full_rerun": 4.1233154625261985
+    },
+    {
+      "label": "",
+      "n_steps": 15,
+      "p_fail": 0.1,
+      "recall": 0.7,
+      "baseline_success": 0.14,
+      "protected_success": 0.82,
+      "baseline_silent_corruption": 0.86,
+      "protected_silent_corruption": 0.18,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 4.777777777777778,
+      "cost_vs_full_rerun": 4.015323867079084
+    },
+    {
+      "label": "",
+      "n_steps": 15,
+      "p_fail": 0.1,
+      "recall": 0.9,
+      "baseline_success": 0.14,
+      "protected_success": 0.88,
+      "baseline_silent_corruption": 0.86,
+      "protected_silent_corruption": 0.12,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": 7.166666666666667,
+      "cost_vs_full_rerun": 3.98684639284448
+    },
+    {
+      "label": "",
+      "n_steps": 15,
+      "p_fail": 0.1,
+      "recall": 0.99,
+      "baseline_success": 0.14,
+      "protected_success": 1.0,
+      "baseline_silent_corruption": 0.86,
+      "protected_silent_corruption": 0.0,
+      "protected_caught_failure": 0.0,
+      "corruption_reduction": Infinity,
+      "cost_vs_full_rerun": 3.95877000979628
+    }
+  ]
+}
