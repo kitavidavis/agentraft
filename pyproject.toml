@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentraft"
+version = "0.1.0"
+description = "Distributed reliability infrastructure for agentic AI — Raft-inspired step-level consensus, verification, and rollback for multi-step agent pipelines."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "David Kitavi", email = "daviskitavi98@gmail.com" }]
+keywords = ["agentic-ai", "llm", "reliability", "consensus", "verification", "ai-infrastructure"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+dependencies = []
+
+[project.optional-dependencies]
+bedrock   = ["boto3>=1.34"]
+openai    = ["openai>=1.30"]
+anthropic = ["anthropic>=0.34"]
+google    = ["google-genai>=0.3"]
+redis     = ["redis>=5.0"]
+otel      = ["opentelemetry-api>=1.25", "opentelemetry-sdk>=1.25"]
+all = [
+  "boto3>=1.34",
+  "openai>=1.30",
+  "anthropic>=0.34",
+  "google-genai>=0.3",
+  "redis>=5.0",
+  "opentelemetry-api>=1.25",
+  "opentelemetry-sdk>=1.25",
+]
+dev       = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.5"]
+
+[project.urls]
+Homepage = "https://agentraft.io"
+Repository = "https://github.com/kitavidavis/agentraft"
+
+[tool.hatch.build.targets.wheel]
+packages = ["agentraft"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
