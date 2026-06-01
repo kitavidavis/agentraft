@@ -1,6 +1,6 @@
 # AgentRaft
 
-**Distributed reliability infrastructure for agentic AI.**
+**Distributed reliability layer for agentic AI.**
 Raft-inspired, step-level consensus for multi-step agent pipelines — verify every step before it commits, and roll back to the last good checkpoint on failure.
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -183,4 +183,4 @@ Early alpha. The Python SDK is the reference implementation of the protocol. A h
 
 ## License
 
-Apache 2.0 © 2026 AgentRaft / ImaraCode LLC
+Apache 2.0 © 2026 AgentRaft
