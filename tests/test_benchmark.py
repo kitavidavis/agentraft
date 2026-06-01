@@ -1,7 +1,7 @@
 """Tests for the benchmark harness — deterministic, fully offline."""
 import pytest
 
-from benchmarks import Outcome, Scenario, evaluate
+from benchmarks import Scenario, evaluate
 from benchmarks.faults import FaultConfig
 
 
